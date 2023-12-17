@@ -22,3 +22,8 @@ Clone the GitHub repository to your local machine:
 
 ```bash
 git clone https://github.com/AnverDole/MLQ-CPU-Scheduler-Simulator
+```
+
+### 2. Open with an IDE
+
+You can now open the source code directory using Visual Studio and start your development work.
