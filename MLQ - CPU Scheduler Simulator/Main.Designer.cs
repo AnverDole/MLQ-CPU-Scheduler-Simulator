@@ -31,12 +31,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.queuesDataGridView = new System.Windows.Forms.DataGridView();
+            this.nameGridViewItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priorityGridViewItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.algoGridViewItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.allProcessesDataGrid = new System.Windows.Forms.DataGridView();
+            this.nameGridViewCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.arrivalTimeGridViewCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.burstGridViewCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.queueGridViewCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.examplesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.example1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.example2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.example3AgeingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.runBtn = new System.Windows.Forms.ToolStripButton();
@@ -86,6 +94,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.queuesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.queuesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameGridViewItem,
+            this.priorityGridViewItem,
+            this.algoGridViewItem});
             this.queuesDataGridView.EnableHeadersVisualStyles = false;
             this.queuesDataGridView.Location = new System.Drawing.Point(6, 27);
             this.queuesDataGridView.MultiSelect = false;
@@ -96,8 +108,31 @@
             this.queuesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.queuesDataGridView.Size = new System.Drawing.Size(352, 569);
             this.queuesDataGridView.TabIndex = 1;
-            this.queuesDataGridView.VirtualMode = true;
             this.queuesDataGridView.SelectionChanged += new System.EventHandler(this.queuesDataGridView_SelectionChanged);
+            // 
+            // nameGridViewItem
+            // 
+            this.nameGridViewItem.HeaderText = "Name";
+            this.nameGridViewItem.MinimumWidth = 6;
+            this.nameGridViewItem.Name = "nameGridViewItem";
+            this.nameGridViewItem.ReadOnly = true;
+            this.nameGridViewItem.Width = 125;
+            // 
+            // priorityGridViewItem
+            // 
+            this.priorityGridViewItem.HeaderText = "Priority";
+            this.priorityGridViewItem.MinimumWidth = 6;
+            this.priorityGridViewItem.Name = "priorityGridViewItem";
+            this.priorityGridViewItem.ReadOnly = true;
+            this.priorityGridViewItem.Width = 125;
+            // 
+            // algoGridViewItem
+            // 
+            this.algoGridViewItem.HeaderText = "Algorithem";
+            this.algoGridViewItem.MinimumWidth = 6;
+            this.algoGridViewItem.Name = "algoGridViewItem";
+            this.algoGridViewItem.ReadOnly = true;
+            this.algoGridViewItem.Width = 125;
             // 
             // groupBox2
             // 
@@ -119,6 +154,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.allProcessesDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.allProcessesDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameGridViewCol,
+            this.arrivalTimeGridViewCol,
+            this.burstGridViewCol,
+            this.queueGridViewCol});
             this.allProcessesDataGrid.Location = new System.Drawing.Point(7, 27);
             this.allProcessesDataGrid.Name = "allProcessesDataGrid";
             this.allProcessesDataGrid.RowHeadersWidth = 51;
@@ -127,6 +167,38 @@
             this.allProcessesDataGrid.Size = new System.Drawing.Size(677, 265);
             this.allProcessesDataGrid.TabIndex = 1;
             this.allProcessesDataGrid.SelectionChanged += new System.EventHandler(this.allProcessesDataGrid_SelectionChanged);
+            // 
+            // nameGridViewCol
+            // 
+            this.nameGridViewCol.HeaderText = "Name";
+            this.nameGridViewCol.MinimumWidth = 6;
+            this.nameGridViewCol.Name = "nameGridViewCol";
+            this.nameGridViewCol.ReadOnly = true;
+            this.nameGridViewCol.Width = 125;
+            // 
+            // arrivalTimeGridViewCol
+            // 
+            this.arrivalTimeGridViewCol.HeaderText = "Arrival Time";
+            this.arrivalTimeGridViewCol.MinimumWidth = 6;
+            this.arrivalTimeGridViewCol.Name = "arrivalTimeGridViewCol";
+            this.arrivalTimeGridViewCol.ReadOnly = true;
+            this.arrivalTimeGridViewCol.Width = 125;
+            // 
+            // burstGridViewCol
+            // 
+            this.burstGridViewCol.HeaderText = "Burst Time";
+            this.burstGridViewCol.MinimumWidth = 6;
+            this.burstGridViewCol.Name = "burstGridViewCol";
+            this.burstGridViewCol.ReadOnly = true;
+            this.burstGridViewCol.Width = 125;
+            // 
+            // queueGridViewCol
+            // 
+            this.queueGridViewCol.HeaderText = "Queue";
+            this.queueGridViewCol.MinimumWidth = 6;
+            this.queueGridViewCol.Name = "queueGridViewCol";
+            this.queueGridViewCol.ReadOnly = true;
+            this.queueGridViewCol.Width = 125;
             // 
             // toolStripDropDownButton1
             // 
@@ -144,9 +216,10 @@
             // 
             this.examplesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.example1ToolStripMenuItem,
-            this.example2ToolStripMenuItem});
+            this.example2ToolStripMenuItem,
+            this.example3AgeingToolStripMenuItem});
             this.examplesToolStripMenuItem.Name = "examplesToolStripMenuItem";
-            this.examplesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.examplesToolStripMenuItem.Size = new System.Drawing.Size(155, 26);
             this.examplesToolStripMenuItem.Text = "Examples";
             // 
             // example1ToolStripMenuItem
@@ -163,10 +236,17 @@
             this.example2ToolStripMenuItem.Text = "Example 2 (Two Queues)";
             this.example2ToolStripMenuItem.Click += new System.EventHandler(this.example2ToolStripMenuItem_Click);
             // 
+            // example3AgeingToolStripMenuItem
+            // 
+            this.example3AgeingToolStripMenuItem.Name = "example3AgeingToolStripMenuItem";
+            this.example3AgeingToolStripMenuItem.Size = new System.Drawing.Size(261, 26);
+            this.example3AgeingToolStripMenuItem.Text = "Example 3 (Ageing)";
+            this.example3AgeingToolStripMenuItem.Click += new System.EventHandler(this.example3AginToolStripMenuItem_Click);
+            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(155, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -390,5 +470,13 @@
         private ToolStripMenuItem examplesToolStripMenuItem;
         private ToolStripMenuItem example1ToolStripMenuItem;
         private ToolStripMenuItem example2ToolStripMenuItem;
+        private ToolStripMenuItem example3AgeingToolStripMenuItem;
+        private DataGridViewTextBoxColumn nameGridViewCol;
+        private DataGridViewTextBoxColumn arrivalTimeGridViewCol;
+        private DataGridViewTextBoxColumn burstGridViewCol;
+        private DataGridViewTextBoxColumn queueGridViewCol;
+        private DataGridViewTextBoxColumn nameGridViewItem;
+        private DataGridViewTextBoxColumn priorityGridViewItem;
+        private DataGridViewTextBoxColumn algoGridViewItem;
     }
 }

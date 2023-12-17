@@ -145,6 +145,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "NewProcessFrm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "New Process";
             ((System.ComponentModel.ISupportInitialize)(this.arrivelTimeNumBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.burstTimeNumBox)).EndInit();

@@ -50,6 +50,7 @@
             // 
             // algorithemDropDown
             // 
+            this.algorithemDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.algorithemDropDown.FormattingEnabled = true;
             this.algorithemDropDown.Location = new System.Drawing.Point(12, 153);
             this.algorithemDropDown.Name = "algorithemDropDown";
