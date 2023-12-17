@@ -89,18 +89,11 @@ namespace MLQ___CPU_Scheduler_Simulator
         {
             Environment.Exit(0);
         }
-
-
-
-        private void startToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            mLQScheduler.Run();
-        }
-
         
 
         private void runBtn_Click(object sender, EventArgs e)
         {
+            resultsDataGridView.Rows.Clear();
             mLQScheduler.Run();
         }
 

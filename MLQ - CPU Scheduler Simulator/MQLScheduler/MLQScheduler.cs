@@ -32,7 +32,9 @@ namespace MLQ___CPU_Scheduler_Simulator.MQLScheduler
                 
             currentTime = processes.OrderBy(p => p.arrivelTime).First().arrivelTime;
 
-            while (true) { 
+            while (true) {
+                if (ProcessAgedProcesses()) continue;
+
                 List<Queue> queues_ = queues
                     .Where(q => GetProcessesInQueue(q).Where(p => p.remainingBurstTime > 0).Where(p => p.arrivelTime <= currentTime).Count() > 0)
                     .OrderBy(q => q.priority)
@@ -89,7 +91,8 @@ namespace MLQ___CPU_Scheduler_Simulator.MQLScheduler
         }
         public void ProcessFCFSQueue(Queue queue) {
             while (true)
-            {
+            { 
+
                 List<Process> processes = GetProcessesInQueue(queue)
                         .Where(p => p.remainingBurstTime > 0)
                         .Where(p => p.arrivelTime <= currentTime)
@@ -137,6 +140,45 @@ namespace MLQ___CPU_Scheduler_Simulator.MQLScheduler
         }
         public void ProcessRRQueue(Queue queue) {
             ProcessFCFSQueue(queue);
+        }
+        public bool ProcessAgedProcesses()
+        {
+            bool hasProcessed = false;
+
+            List<Process> processes = this.processes
+                    .Where(p => p.remainingBurstTime > 0)
+                    .Where(p => p.arrivelTime <= currentTime)
+                    .Where(p => p.age > aginThreashhold)
+                    .OrderBy(p => p.arrivelTime)
+                    .ToList();
+            if (processes.Count() <= 0) return hasProcessed;
+
+            foreach (Process process in processes)
+                {
+                    int timeSlice = process.remainingBurstTime - timeQuantum > 0
+                                        ? timeQuantum
+                                        : process.remainingBurstTime;
+
+
+                    if (currentTime < process.arrivelTime)
+                        currentTime += process.arrivelTime - currentTime;
+
+                    int arraivalTime = currentTime;
+
+                     
+                    process.remainingBurstTime-= timeSlice;
+                    currentTime+= timeSlice; 
+                    
+
+                    contextSwitchedEvent(this, new ContextChangedEventArgs
+                    {
+                        process = process,
+                        serviceTime = timeSlice,
+                        arrivalTime = arraivalTime
+                    });
+                }
+
+            return hasProcessed;
         }
 
 

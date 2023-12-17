@@ -9,6 +9,7 @@
 
         private int burstTime_ = 0;
         private int remainingBurstTime_ = 0;
+        private int age_ = 0;
 
         public int burstTime {
             get { return this.burstTime_; }
@@ -17,6 +18,12 @@
         public int remainingBurstTime {
             get { return this.remainingBurstTime_;  }
             set { remainingBurstTime_ = value; }
+        }
+
+        public int age
+        {
+            get { return this.age_; }
+            set { age_ = value; }
         }
     }
 }
