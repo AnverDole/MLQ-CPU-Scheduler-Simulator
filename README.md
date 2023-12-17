@@ -1,3 +1,8 @@
+## Download Release Binaries
+
+You can download the latest release binaries [here](https://github.com/AnverDole/MLQ-CPU-Scheduler-Simulator/files/13697367/MLQ.-.CPU.Scheduler.Simulator.zip).
+
+
 # Deployment Guide
 
 This guide provides step-by-step instructions on deploying this application.
