@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLQ - CPU Scheduler Simulator", "MLQ - CPU Scheduler Simulator\MLQ - CPU Scheduler Simulator.csproj", "{A80882B4-7B77-4817-A4FA-269550666C22}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A80882B4-7B77-4817-A4FA-269550666C22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A80882B4-7B77-4817-A4FA-269550666C22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A80882B4-7B77-4817-A4FA-269550666C22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A80882B4-7B77-4817-A4FA-269550666C22}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {16B45740-E5A0-4C77-A71E-038922EB6114}
+	EndGlobalSection
+EndGlobal
