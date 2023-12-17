@@ -7,6 +7,7 @@ This guide provides step-by-step instructions on deploying this application.
 Before starting the deployment process, make sure you have the following prerequisites installed:
 
 - .Net 7 Runtime
+- Visual Studio (2022)
 
 ## Deployment Steps
 
@@ -15,4 +16,4 @@ Before starting the deployment process, make sure you have the following prerequ
 Clone the GitHub repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
+git clone [https://github.com/your-username/your-repo.git](https://github.com/AnverDole/MLQ-CPU-Scheduler-Simulator/blob/master/README.md)https://github.com/AnverDole/MLQ-CPU-Scheduler-Simulator
